@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Add New Seller</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+</head>
+<body>
+	<form action="#" th:action="@{/sellers/update}" method="POST">
+		<div class="form-group">
+			<label for="exampleInputName">ID</label> <input type="text"
+				class="form-control" name="id" id="id"
+				placeholder="Enter id">
+		</div>
+		<div class="form-group">
+			<label for="exampleInputName">Name</label> <input type="text"
+				class="form-control" name="name" id="name"
+				placeholder="Enter name">
+		</div>
+		<div class="form-group">
+			<label for="exampleInputLastname">Tasa</label> <input
+				type="text" name="tasa" class="form-control" id="tasa"
+				placeholder="Enter Tasa">
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</body>
+</html>
