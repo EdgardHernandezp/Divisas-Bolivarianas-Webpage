@@ -2,9 +2,9 @@ package com.dreamseeker.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.client.RestTemplate;
 
 import com.dreamseeker.model.responseBodies.TasaActual;
@@ -32,5 +32,18 @@ public class MainController {
 		RestTemplate rest = new RestTemplate();
 		rest.put("http://localhost:9090/sellers/" + seller.getId(), seller);
 		return "addNew";
+	}
+
+	@GetMapping("/sellers/delete")
+	public String inputInfoFromSellerToDelete() {		
+		return "deleteSeller";
+	}
+
+	@PostMapping("/sellers/delete")
+	public String deleteSeller(Long id) {
+		RestTemplate rest = new RestTemplate();
+		rest.delete("http://localhost:9090/sellers/delete/{id}", id);
+		System.out.println("Seller eliminated");
+		return "deleteSeller";
 	}
 }
